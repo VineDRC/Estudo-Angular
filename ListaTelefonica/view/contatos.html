@@ -1,0 +1,46 @@
+<div class="jumbotron">
+    <h3>{{app}}</h3> <!-- Bind muda o texto de um HTML / poderia ser <h3>{{app}}</h3> -->
+    <div ng-show="contatos.length <= 0" ui-Alert></div>
+    <!-- Criação de diretiva de mensagem de erro, más a proteção do google não permite rodar -->
+    <table ng-show="contatos.length > 0" class="table table">
+        <!-- Mostrar a tabela apenas quando o número de Contatos for maior que 0, caso for igual a 0, deixa ela escondida -->
+        <input class="form-control" type="text" ng-model="BuscarTelefone" placeholder="O você deseja buscar ?">
+        <tr>
+            <th></th>
+            <th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+            <!-- Ao clicar no item Nome, irá ordenar o mesmo -->
+            <th>Telefone</th>
+            <th><a href="" ng-click="ordenarPor('operadora')">Operadora</a></th>
+            <!-- Ao clicar no item Operadora, irá ordenar o mesmo -->
+            <th><a href="" ng-click="ordenarPor('data')">Data</a></th>
+            <!-- Ao clicar no item Data, irá ordenar o mesmo -->
+            <th></th>
+        </tr>
+        <!-- Serve para repetir um item / Instanciar um elemento por item de um array / Percorrer uma array. -->
+        <tr ng-class="{selecionado: contato.selecionado}"
+            ng-repeat="contato in contatos | filter:{nome: BuscarTelefone} | orderBy: CriterioOrdenacao:direcaoDaOrdenacao">
+            <td><input type="checkbox" ng-model="contato.selecionado" /></td>
+            <td>{{contato.nome | FiltroNome | ellipsis:10}}</td> <!-- :5 para definir o size do ellipsis -->
+            <td>{{contato.telefone}}</td>
+            <td>{{contato.operadora.nome | uppercase}}</td> <!-- Filtro de uppercase -->
+            <td>{{contato.data | date: 'dd/MM/yyyy'}}</td> <!-- Filtro de data, por Dia/Mês/Ano -->
+            <!-- No exemplo a cima poderia ser desta forma também ...
+            <td ng-repeat="(key, value) in contato">
+                {{value}} -->
+
+            <!-- Dentro do {{}} eu consigo mostrar qualquer coisa que está dentro do $scope e utilizar filtro nos itens.
+                Caso eu defina o controller acima do scope que eu quero usar basta inserir apenas
+            {{value}} e não {{$scope.value}} -->
+
+            <!-- ngStyle, posso mexer com a estilização do item sem precisar ir ao CSS e modificar -->
+            <td>
+                <div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.Cor}"></div>
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <a class="btn btn-primary btn-block" href="#!/criarContatos">Novo Contato</a>
+    <!-- ng-show ele deixa o componente a mostra até algo contrariar, ai ele irá esconder o componente -->
+    <button class="btn btn-danger btn-block" ng-click="removerContato(contatos)"
+        ng-show="isContatoSelecionado(contatos)">Remover Contato</button>
+</div>

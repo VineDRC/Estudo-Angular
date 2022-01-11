@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="ListaTelefonica">
+<!-- Iniciando o Angular no projeto e definindo o nome da aplicação -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Telefonica</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+    <!-- Adicionando o Bootstrap para melhorar o visual do Projeto -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Adicionando o CSS ao projeto para estilizar a aplicação -->
+    <link rel="stylesheet" type="text/css" href="css/uiMessage.css">
+    <!-- Importando alguns arquivos do Angular para o Projeto -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-locale_pt-br.js"></script>
+    <script src="lib/angular/angular-messages.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <!-- Importanto os arquivos de criação de modulo, diretivas, serviços e declaração das funções do modulo -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/ListaTelefonicaCtrl.js"></script>
+    <script src="js/controllers/CriarContatosCtrl.js"></script>
+    <script src="js/services/ContatosAPIService.js"></script>
+    <script src="js/services/OperadorasAPIService.js"></script>
+    <script src="js/value/config.js"></script>
+    <script src="js/filters/FiltrodeNome.js"></script>
+    <script src="js/filters/ellipsisNome.js"></script>
+    <script src="js/directives/MensagemErro.js"></script>
+    <script src="js/directives/uiData.js"></script>
+    <script src="js/directives/uiTelefone.js"></script>
+    <script src="js/config/rotasConfig.js"></script>
+</head>
+
+<body>
+    <!-- Definindo o Controller a ser usado e iniciando | Alterado para o arquivo rotasConfig para realizar a SinglePage -->
+    <div ng-view></div>
+    <!-- Diretriz do chrome bloqueia este código, apenas se eu iniciar o servidor local eu consigo rodar este código a baixo
+            <div ng-include="'view/footer.html'"></div> -->
+</body>
+
+</html>
