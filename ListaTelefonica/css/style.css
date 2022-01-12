@@ -1,12 +1,39 @@
+body{
+    background-image:url(../Fotos/fade.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Montserrat+Alternates:wght@600&family=Rubik:ital,wght@0,500;1,500&display=swap');
+
 .jumbotron{
     width: 650px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    border-radius: 50px;
+    background-color: white;
+}
+.modal-footer{
+    background-color: white;
 }
 .table{
     margin-top: 30px;
+}
+#img{
+    background-image:url(../Fotos/youtube.jpg);
+    width: 40px;
+    height: 40px;
+}
+footer {
+    position:absolute;
+	bottom:0;
+	width:100%;
+    background-color: white;
+    padding-top: 10px;
+    text-align: center;
 }
 th {
     text-align: center;
@@ -17,6 +44,10 @@ th {
 h3 {
     text-transform: uppercase;
     font-weight: bold;
+    padding-bottom: 5px;
+    font-family: 'Crete Round', serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 .selecionado {
     background-color: rgb(211, 211, 39);

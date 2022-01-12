@@ -2,6 +2,7 @@
     <!-- ng model é a ligação da view com o aplicativo/usuario envia dados para serem utilizados
 ex, usuario digita o telefone, o aplicativo recebe o telefone e processa a informação e guarda ele em algum local... -->
     <form name="contatoForm">
+        <h3>{{tituloCriarContatos}}</h3>
         <!-- Required -> Campo requirido, obrigatório, minlength -> minimo de caracteres -->
         <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome"
             ng-required="true" ng-minlength="4">

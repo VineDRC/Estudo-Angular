@@ -1,5 +1,6 @@
 // Criação do Controller para Criar Contatos
 angular.module("ListaTelefonica").controller("CriarContatosCtrl", function ($scope, contatosAPI, $location, operadoras) {
+    $scope.tituloCriarContatos = "Criar Contato"
     $scope.operadoras = operadoras.data;
     $scope.adicionarContato = function (contato) {
         // Push, ele adiciona o item na Array e coloca ele na ULTIMA POSIÇÃO (PUSH)

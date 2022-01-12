@@ -35,8 +35,14 @@
 <body>
     <!-- Definindo o Controller a ser usado e iniciando | Alterado para o arquivo rotasConfig para realizar a SinglePage -->
     <div ng-view></div>
-    <!-- Diretriz do chrome bloqueia este código, apenas se eu iniciar o servidor local eu consigo rodar este código a baixo
-            <div ng-include="'view/footer.html'"></div> -->
+    <div>
+        <footer>
+            <div ng-include="'view/footer.html'"></div>
+            <a href="https://www.youtube.com/watch?v=093dIOCNeIc"><img src="../ListaTelefonica/Fotos/youtube.jpg" alt="Acesse ao Canal do Rodrigo Branas" id="img"></a>
+            <!-- Diretriz do chrome bloqueia este código, apenas se eu iniciar o servidor local eu consigo rodar este código a baixo -->
+            <div><p>Acesse ao Canal do Rodrigo e Venha Conhecer o Mundo do Angular</p></div>
+        </footer>
+    </div>
 </body>
 
 </html>
